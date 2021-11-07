@@ -21,9 +21,9 @@ export class DetalleService {
     return this.cliente.get(`${this.API}/${id}`);
   }
 
-  crearViaje(nombreViaje : string, precioViaje: number, descripcionViaje: string, horaSalida:Time, cantidadPasajeros: number, fotoAuto: string){
+  crearViaje(nombreViaje : string, precioViaje: number, descripcionViaje: string, horaSalida:Time, cantidadPasajeros: number, urlImagen: string){
 
-    return this.cliente.post(this.API, {nombreViaje, precioViaje, descripcionViaje, horaSalida, cantidadPasajeros, fotoAuto})
+    return this.cliente.post(this.API, {nombreViaje, precioViaje, descripcionViaje, horaSalida, cantidadPasajeros, urlImagen})
   }
 
   eliminarViaje(id: string){

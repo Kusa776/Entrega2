@@ -11,7 +11,7 @@
 <ion-list>
     <ion-item *ngFor="let ai of detalles">
         <ion-avatar slot="start">
-            <img [src]=" ai.fotoAuto && ai.fotoAuto.formats.thumbnail.url ? 'http://localhost:1337' + ai.fotoAuto.formats.thumbnail.url : 'https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1'">
+            <img [src]="ai.urlImagen">
         </ion-avatar>
         <ion-label>
             <h1>{{ai.nombreViaje}}</h1>

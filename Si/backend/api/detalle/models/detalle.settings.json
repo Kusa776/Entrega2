@@ -42,6 +42,9 @@
     "cantidadPasajeros": {
       "type": "integer",
       "required": false
+    },
+    "urlImagen": {
+      "type": "string"
     }
   }
 }

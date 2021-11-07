@@ -14,7 +14,7 @@
       <ion-card-content>
         <form>
           <ion-item>
-            <ion-label position="floating">Nombre</ion-label>
+            <ion-label position="floating">Apodo del conductor</ion-label>
             <ion-input type="text" #nombreViaje required="true"></ion-input>
           </ion-item>
           <ion-item>
@@ -35,13 +35,10 @@
           </ion-item>
           <ion-item>
             <ion-label position="floating">Foto del Auto</ion-label>
-            <br><ion-input type="file" #fotoAuto (change)="capturarFile($event)" ></ion-input><br>
-          </ion-item>
-          <ion-item *ngIf="previsualizacion" width="50%">
-            <img [src]="previsualizacion"/>
+            <ion-input type="text" #urlImagen></ion-input>
           </ion-item>
 
-          <ion-button (click)="agregarViaje(nombreViaje,precioViaje,descripcionViaje,horaSalida,cantidadPasajeros)">
+          <ion-button (click)="agregarViaje(nombreViaje,precioViaje,descripcionViaje,horaSalida,cantidadPasajeros,urlImagen)">
               ¡Programar Viaje!
           </ion-button>
         </form>

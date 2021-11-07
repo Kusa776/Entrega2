@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Viajes } from '../viajes.model';
 import { Router } from '@angular/router';
 import { DetalleService } from 'src/app/services/detalle.service';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { DetalleService } from 'src/app/services/detalle.service';
 })
 export class DetalleViajePage implements OnInit {
   detalles: any = [];
-  constructor(private activatedRoute: ActivatedRoute, private route: Router, private detalleService: DetalleService){}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private detalleService: DetalleService, public alertController: AlertController){}
 
   loadViaje() {
     this.activatedRoute.paramMap.subscribe(paramMap=>{
@@ -31,6 +32,24 @@ export class DetalleViajePage implements OnInit {
 
 ngOnInit() {
   this.loadViaje();
+}
+
+async notificacion() {
+  const alert = await this.alertController.create({
+    header: 'Viaje',
+    message: 'Su viaje ha sido confirmado, se le enviara un correo ¡Buen Viaje!',
+      buttons: [({
+        text: "Ok",
+        handler: () => {
+          this.router.navigate(['/lobby'])
+        }
+      })]
+  });
+
+  await alert.present();
+
+  const { role } = await alert.onDidDismiss();
+  console.log('onDidDismiss resolved with role', role);
 }
 
 

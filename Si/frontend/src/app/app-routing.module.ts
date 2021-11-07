@@ -53,7 +53,11 @@ const routes: Routes = [
   {
     path: 'perfiin',
     loadChildren: () => import('./pages/perfiin/perfiin.module').then( m => m.PerfiinPageModule)
+  },  {
+    path: 'viaje',
+    loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule)
   },
+
 
 ];
 

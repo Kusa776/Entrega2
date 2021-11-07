@@ -16,7 +16,7 @@ export class ProgravPage implements OnInit{
   ngOnInit() {
   }
 
-  async agregarViaje(nombreViaje,precioViaje,descripcionViaje,horaSalida,cantidadPasajeros,archivos){
+  async agregarViaje(nombreViaje,precioViaje,descripcionViaje,horaSalida,cantidadPasajeros,urlImagen){
     const alert = await this.alertController.create({
 
       header:'Viaje Creado',
@@ -24,7 +24,7 @@ export class ProgravPage implements OnInit{
         text: "Ok",
         handler: () => {
           console.log(nombreViaje.value, precioViaje.value, descripcionViaje.value),
-          this.detalleService.crearViaje(nombreViaje.value, precioViaje.value, descripcionViaje.value, horaSalida.value,cantidadPasajeros.values, archivos.value)
+          this.detalleService.crearViaje(nombreViaje.value, precioViaje.value, descripcionViaje.value, horaSalida.value,cantidadPasajeros.values, urlImagen.value)
           .subscribe(
           (res) =>  this.router.navigate(['/soli']),
           (err) => console.log(err)
