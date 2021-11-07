@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start" [routerLink] = "['/lobby']">
+      <ion-button></ion-button>
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-buttons>
+      <p id="p">Programar viaje</p>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-card-content>
+        <form>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" #nombreViaje required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Precio</ion-label>
+            <ion-input type="number" #precioViaje required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Descripcion del Viaje</ion-label>
+            <br><ion-input type="text" #descripcionViaje ></ion-input><br>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Cantidad de pasajeros</ion-label>
+            <ion-input type="number" #cantidadPasajeros required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Hora de Salida</ion-label>
+            <br><ion-input type="time" step="2" #horaSalida required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Foto del Auto</ion-label>
+            <br><ion-input type="file" #fotoAuto (change)="capturarFile($event)" ></ion-input><br>
+          </ion-item>
+          <ion-item *ngIf="previsualizacion" width="50%">
+            <img [src]="previsualizacion"/>
+          </ion-item>
+
+          <ion-button (click)="agregarViaje(nombreViaje,precioViaje,descripcionViaje,horaSalida,cantidadPasajeros)">
+              ¡Programar Viaje!
+          </ion-button>
+        </form>
+      </ion-card-content>      
+  </ion-card>
+</ion-content>
+
+<app-footer></app-footer>

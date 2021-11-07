@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>perfiin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]= 'detalle.imagen'>
+    <ion-card-header>
+
+      <ion-card-subtitle>Conductor :{{detalle.apodo}}</ion-card-subtitle>
+      <ion-card-title>{{detalle.vehiculo}}</ion-card-title>
+      <ion-card-subtitle>Horario de servicio: {{detalle.horario}}</ion-card-subtitle>
+      <ion-card-subtitle>Dia de servicio:  {{detalle.dia}}</ion-card-subtitle>
+
+
+    </ion-card-header>
+
+    <ion-card-content > Descripción:
+      {{detalle.descripcion}}
+      
+    </ion-card-content>
+
+  </ion-card>    
+</ion-content>

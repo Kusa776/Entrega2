@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start" [routerLink] = "['/lobby']" >
+      <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+      <ion-button>Volver al inicio</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="container">
+<ion-list>
+    <ion-item *ngFor="let ai of detalles">
+        <ion-avatar slot="start">
+            <img [src]=" ai.fotoAuto && ai.fotoAuto.formats.thumbnail.url ? 'http://localhost:1337' + ai.fotoAuto.formats.thumbnail.url : 'https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1'">
+        </ion-avatar>
+        <ion-label>
+            <h1>{{ai.nombreViaje}}</h1>
+            <h1>{{ai.precioViaje}}$CLP</h1>
+            <ion-button color="primary" [routerLink]="['/soli',ai.id]">Detalles</ion-button>
+            <ion-button color="danger" (click)="eliminarViaje(ai.id)">Eliminar</ion-button>
+        </ion-label>
+    </ion-item>
+</ion-list>
+
+</ion-content>
+
+<app-footer></app-footer>

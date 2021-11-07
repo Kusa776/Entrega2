@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start" [routerLink] = "['/soli']" >
+      <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+      <ion-button>Detalles del Viaje</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card id="carta">
+        <img [src]=" this.detalles.fotoAuto && this.detalles.fotoAuto.formats.thumbnail.url ? 'http://localhost:1337' + this.detalles.fotoAuto.formats.thumbnail.url : 'https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1'"/>
+        <ion-card-header>
+          <ion-card-title>{{this.detalles.nombreViaje}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{this.detalles.descripcionViaje}}
+        </ion-card-content>
+      </ion-card>
+      <p><ion-button color="primary" class ="ion-margin-vertical">Viajar</ion-button></p> Precio:{{this.detalles.precioViaje}}$CLP
+  </div>
+</ion-content>
+
+
+
+<app-footer></app-footer>

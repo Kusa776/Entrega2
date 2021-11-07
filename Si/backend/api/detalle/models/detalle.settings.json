@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "detalles",
+  "info": {
+    "name": "Detalle",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreViaje": {
+      "type": "string",
+      "required": false
+    },
+    "precioViaje": {
+      "type": "biginteger",
+      "required": false
+    },
+    "descripcionViaje": {
+      "type": "text"
+    },
+    "horaSalida": {
+      "type": "time",
+      "required": false
+    },
+    "fotoAuto": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cantidadPasajeros": {
+      "type": "integer",
+      "required": false
+    }
+  }
+}
